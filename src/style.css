@@ -64,3 +64,10 @@ a {
     text-decoration: none;
     color: var(--third);
 }
+
+.selected-page{
+    background-color: #F14C63;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
