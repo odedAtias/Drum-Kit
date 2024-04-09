@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Font style */
+    font-family: "Tilt Neon", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "XROT" 0,
+        "YROT" 0;
+}
+
+/* Color Pallete */
+
+:root {
+    --primary: #EC8164;
+    --secondary: #F14C63;
+    --third: #232936;
+    --fourth: #4E596F;
+    --header: #FFFFFF;
+}
+
+body {
+    background-color: var(--third);
+}
+
+header {
+    background-color: var(--header);
+    width: 100%;
+    padding: 25px 35px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-text {
+    font-size: 20px;
+}
+
+.links {
+    width: 15%;
+}
+
+.links>ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links>ul>li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--third);
+}
