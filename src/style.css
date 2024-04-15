@@ -1,3 +1,4 @@
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
 /* CSS Reset */
@@ -5,8 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Font style */
-    font-family: "Tilt Neon", sans-serif;
+    font-family: "Tilt Neon", sans-serif; /* Use imported font for the entire document */
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -15,8 +15,7 @@
         "YROT" 0;
 }
 
-/* Color Pallete */
-
+/* Color Palette */
 :root {
     --primary: #EC8164;
     --secondary: #F14C63;
@@ -47,16 +46,16 @@ nav {
 }
 
 .links {
-    width: 15%;
+    width: 20%;
 }
 
-.links>ul {
+.links > ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.links>ul>li {
+.links > ul > li {
     list-style: none;
 }
 
@@ -65,9 +64,62 @@ a {
     color: var(--third);
 }
 
-.selected-page{
-    background-color: #F14C63;
+.selected-page {
+    background-color: var(--secondary); /* Use secondary color for selected page */
     border-radius: 5px;
     color: white;
     padding: 5px;
 }
+
+.hamburger-menu {
+    display: none; /* Hide hamburger menu by default */
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+    .links {
+        display: none; /* Hide links by default on smaller screens */
+        width: 50%;
+    }
+
+    .hamburger-menu {
+        display: block; /* Display hamburger menu on smaller screens */
+        cursor: pointer;
+        transition: transform 0.3s ease; /* Add transition for smoother animation */
+    }
+
+    .line {
+        width: 25px;
+        height: 3px;
+        background-color: var(--third);
+        margin: 5px;
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for smoother animation */
+    }
+
+    .nav-open .line:nth-child(1),
+    .nav-open .line:nth-child(3) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-open .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-open .line:nth-child(1) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .links {
+        min-width: 25%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .links {
+        min-width: 30%;
+    }
+}
+
